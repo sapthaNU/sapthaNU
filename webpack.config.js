@@ -21,12 +21,17 @@ module.exports = {
         },
       },
       {
-        test: /\.css$/i,
+        test: /\.css$/,
         use: ["style-loader", "css-loader"],
       },
       {
         test: /\.(png|jp(e*)g|svg|gif)$/,
-        use: ["file-loader"],
+        use: [{
+          loader: 'url-loader',
+          options: {
+            limit: 10000
+          }
+        }],
       },
       {
         test: /\.svg$/,
