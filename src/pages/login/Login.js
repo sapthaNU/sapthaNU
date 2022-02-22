@@ -2,6 +2,7 @@ import React from 'react';
 import maskGroup from '../../assets/login/MaskGroup.png';
 import Logo from '../../assets/login/Logo.png';
 import footerIcons from '../../assets/login/footerIcon.png';
+import { Link } from 'react-router-dom';
 
 import './style.css';
 
@@ -13,8 +14,8 @@ const Login = () => {
       <div className='content-container'>
 
         <div className='logo-container'>
-          <img alt="test IO" src={Logo} />
-          <p>NU’s Loadtesting solution</p>
+          <img alt="test IO" src={Logo} style={{width:'25%'}}/>
+          <p>NU's Loadtesting solution</p>
         </div>
 
         <form className='form-style'>
@@ -26,7 +27,7 @@ const Login = () => {
         </form>
 
       </div>
-      <p>Can’t log in?</p>
+      <Link to="" className='forget-password'>Can't log in?</Link>
 
       <div className='footer-container'>
         <div className='footer-inner-container'>
