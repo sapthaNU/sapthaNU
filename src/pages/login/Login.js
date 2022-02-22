@@ -1,12 +1,16 @@
 import React from 'react';
 import maskGroup from '../../assets/login/MaskGroup.png';
 import Logo from '../../assets/login/Logo.png';
-import footerIcons from '../../assets/login/footerIcon.png';
 import { Link } from 'react-router-dom';
+
+import { DocumentationIcon,SupportIcon } from '../../assets/icons';
 
 import './style.css';
 
-console.log(maskGroup);
+
+const handleInput = (e) => {
+  console.log(e.target.name, e.target.value);
+}
 
 const Login = () => {
   return (
@@ -21,8 +25,8 @@ const Login = () => {
         <form className='form-style'>
           <h3>Log in to your account</h3>
 
-          <input className='input-style' type="text" name="username" placeholder='Username' value=""/>
-          <input className='input-style' type="password" name="password" placeholder='Password' value="" />
+          <input className='input-style' type="text" name="username" placeholder='Username' value="" onChange={handleInput}/>
+          <input className='input-style' type="password" name="password" placeholder='Password' value="" onChange={handleInput}/>
           <button className='button-primary' type="submit">Login</button>
         </form>
 
@@ -31,7 +35,16 @@ const Login = () => {
 
       <div className='footer-container'>
         <div className='footer-inner-container'>
-          <img alt="test IO" src={footerIcons} />
+          <Link to="" className='link-style'>
+            <DocumentationIcon/>
+            <p>Documentation</p>
+          </Link>
+
+          <Link to="" className='link-style'>
+            <SupportIcon/>
+            <p>Support</p>
+          </Link>
+          
         </div>
         <p>Copyright (c) 2022, NU Technology Inc. All rights reserved worldwide.</p>
       </div>
